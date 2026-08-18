@@ -1,0 +1,69 @@
+Model Comparison Report Of Heart_Disease_Prediction
+
+1 Baseline Model Comparison
+
+Model                  Accuracy  Precision  Recall  F1 Score  ROC-AUC
+Logistic Regression     86.11%    78.95%    93.75%   85.71%    94.69%
+KNN                     88.89%    83.33%    93.75%   88.24%    95.94%
+Decision Tree            72.22%    68.75%    68.75%   68.75%    71.88%
+Random Forest            83.33%    75.00%    93.75%   83.33%    90.94%
+SVM                      88.89%    80.00%   100.00%   88.89%    95.62%
+
+Interpretation:
+- KNN and SVM achieved the highest baseline accuracy of 88.89%.
+- SVM achieved the highest baseline recall of 100%.
+- KNN achieved the highest baseline precision of 83.33%.
+- SVM achieved the highest baseline F1-score of 88.89%.
+- KNN achieved the highest baseline ROC-AUC of 95.94%.
+- Decision Tree had the weakest overall baseline performance.
+
+2 Tuned Model Comparison
+
+Model                  Accuracy  Precision  Recall  F1 Score  ROC-AUC
+Logistic Regression     86.11%    76.19%   100.00%   86.49%    93.75%
+KNN                     88.89%    83.33%    93.75%   88.24%    91.88%
+SVM                     80.56%    71.43%    93.75%   81.08%    96.25%
+Random Forest            83.33%    77.78%    87.50%   82.35%    92.50%
+
+3 Cross-Validation Comparison
+
+Model                  CV Accuracy  CV Precision  CV Recall  CV F1  CV ROC-AUC
+Logistic Regression       81.31%       80.36%       79.74%    79.45%    85.34%
+KNN                       80.54%       82.71%       71.92%    76.51%    88.35%
+SVM                       74.31%       71.24%       75.13%    72.09%    82.65%
+Random Forest             79.90%       80.18%       76.54%    77.48%    86.31%
+
+4 Final Model Selection
+Logistic Regression was selected as the final production candidate based on its overall cross-validation performance, particularly its accuracy, recall and F1-score, combined with test-set performance and interpretability.
+
+Final Logistic Regression test performance:
+- Accuracy: 86.11%
+- Precision: 76.19%
+- Recall: 100.00%
+- F1 Score: 86.49%
+- ROC-AUC: 93.75%
+
+Final confusion matrix:
+[[15 5]
+ [0 16]]
+
+Therefore:
+- True Negative = 15
+- False Positive = 5
+- False Negative = 0
+- True Positive = 16
+
+5 Why Not KNN?
+KNN had the highest cross-validation precision (82.71%) and ROC-AUC (88.35%), but its cross-validation recall was 71.92%, lower than Logistic Regression's 79.74%. Therefore, KNN is considered a strong alternative rather than the final model.
+
+6 Why Not SVM?
+SVM achieved a high test ROC-AUC of 96.25%, but its cross-validation accuracy, recall and F1-score were lower. Therefore, the single test-set ROC-AUC was not sufficient to select SVM as the final model.
+
+7 Why Not Decision Tree?
+Decision Tree had the weakest baseline performance, with 72.22% accuracy, 68.75% recall and 71.88% ROC-AUC.
+
+8 Why Not Random Forest?
+Random Forest performed reasonably well but was behind Logistic Regression and KNN on the important overall metrics.
+
+9 Final Conclusion
+Logistic Regression was selected as the final production candidate for this project. KNN remains a strong alternative. The final model should be considered a decision-support prototype rather than a clinically validated diagnostic system.
