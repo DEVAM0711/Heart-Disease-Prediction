@@ -1,0 +1,45 @@
+STEP 7 — SUGGESTIONS TO THE HOSPITAL
+
+7.1 Use the ML Model for Early Risk Screening
+The trained Logistic Regression model can be used as a decision-support tool to help hospitals identify patients who may require further evaluation for potential heart disease.
+
+Final test performance:
+- Accuracy: 86.11%
+- Precision: 76.19%
+- Recall: 100.00%
+- F1 Score: 86.49%
+- ROC-AUC: 93.75%
+- False Negatives: 0
+- False Positives: 5
+
+The model should support healthcare professionals rather than replace clinical judgment.
+
+7.2 Prioritize High-Risk Patients
+Hospitals can use model predictions to help prioritize patients for further clinical assessment. A higher-risk prediction should lead to additional clinical evaluation rather than an automatic diagnosis.
+
+7.3 Collect Important Patient Information
+Relevant information in the dataset includes age, sex, resting blood pressure, serum cholesterol, chest pain type, maximum heart rate achieved, exercise-induced angina, resting ECG results, ST-segment depression, number of major vessels, thallium result, fasting blood sugar and exercise ST-segment slope.
+
+Accurate and complete patient information is important because these variables are used by the prediction model.
+
+7.4 Give Special Attention to High-Risk Predictions
+Patients receiving a positive or higher-risk prediction can be flagged for appropriate clinical evaluation. The ML model should be treated as a screening/decision-support tool, not as a standalone diagnostic system.
+
+7.5 Reduce False Negatives
+The final test set contained 0 false negatives, resulting in 100% recall. This is an important result for the project because missing potential positive cases is particularly important in a screening context. However, this result is based only on the current test sample and does not guarantee zero false negatives in real-world use.
+
+7.6 Regularly Monitor Model Performance
+If the model were used operationally, hospitals should regularly monitor accuracy, precision, recall, F1-score, ROC-AUC, false positives and false negatives. The model should be revalidated when patient populations or data collection processes change.
+
+7.7 Use the Model Alongside Clinical Expertise
+The recommended approach is:
+ML prediction + patient history + clinical examination + appropriate diagnostic evaluation = final clinical decision.
+
+7.8 Preventive Health Recommendations
+Hospitals can encourage appropriate preventive care based on clinical assessment, including regular health check-ups, monitoring blood pressure/cholesterol/glucose, physical activity, healthy dietary habits, tobacco avoidance, healthy weight management and timely follow-up.
+
+7.9 Hospital Implementation Workflow
+Patient → Collect Patient Data → Data Preprocessing → Logistic Regression Model → Potential Risk Prediction → Clinical Review → Further Evaluation → Preventive/Treatment Planning.
+
+7.10 Final Recommendation
+The Logistic Regression model can be used as a decision-support prototype for early risk screening. It should not be considered a clinically validated diagnostic tool. Larger and independent clinical datasets would be required before real-world deployment.
